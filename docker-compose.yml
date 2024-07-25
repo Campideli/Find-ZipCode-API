@@ -1,0 +1,14 @@
+services:
+    postgresdb:
+      image: postgres
+      restart: always
+      volumes:
+        - postgres-data:/data/db
+      environment:
+        - 'POSTGRES_USER=postgres'
+        - 'POSTGRES_PASSWORD=banco123'
+        - 'POSTGRES_DB=busca-cep-db'
+      ports:
+        - 5432:5432
+volumes:
+  postgres-data:
